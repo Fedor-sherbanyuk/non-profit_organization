@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лендинг-пейдж некоммерческой организации</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div id="map">
+</div>
+    <script>
+        const map = L.map('map').setView([50.4501, 30.5234], 4);
+        const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        const marker = L.marker([50.4501, 30.5234],{
+            color: "255,0,0",
+            draggable: true,
+            alt: 'Kyiv'
+        }).addTo(map)
+            .bindPopup('Kyiv, Ukraine is the birthplace of Leaflet!');
+    </script>
+<header class="bg-primary">
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">О нас</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Проекты</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Новости</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Контакты</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container text-center py-5">
+        <h1 class="display-4">Название вашей организации</h1>
+        <p class="lead">Заголовок вашей миссии</p>
+    </div>
+</header>
+
+<section id="about" class="py-5">
+    <div class="container">
+        <h2 class="pad">О нас</h2>
+        <p>Краткое описание вашей организации и ее миссии.</p>
+    </div>
+</section>
+
+<section id="projects" class="bg-light py-5">
+    <div class="container">
+        <h2>Наши проекты</h2>
+        <!-- Здесь можно добавить информацию о проектах -->
+    </div>
+</section>
+
+<section id="news" class="py-5">
+    <div class="container">
+        <h2>Новости и события</h2>
+        <!-- Здесь можно добавить список новостей и событий -->
+    </div>
+</section>
+
+<section id="contact" class="bg-light py-5">
+    <div class="container">
+        <h2>Контакты</h2>
+        <!-- Здесь можно добавить контактную информацию -->
+    </div>
+</section>
+
+<footer class="bg-primary text-center py-3">
+    <p>&copy; 2023 Название вашей организации. Все права защищены.</p>
+
+</footer>
+<div id="map2">
+</div>
+<script>
+    const map2 = L.map('map2').setView([50.4501, 30.5234], 4);
+    const tiles2 = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map2);
+    const marker2 = L.marker([50.4501, 30.5234],{
+        color: "255,0,0",
+        draggable: true,
+        alt: 'Kyiv'
+    }).addTo(map2)
+        .bindPopup('Kyiv, Ukraine is the birthplace of Leaflet!');
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
